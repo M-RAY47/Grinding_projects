@@ -1,9 +1,9 @@
 const Main = () => {
   return (
-    <nav>
+    <main>
       <img />
       <div></div>
-    </nav>
+    </main>
   );
 };
 export default Navbar;
