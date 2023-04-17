@@ -3,8 +3,8 @@ const Main = () => {
     <main>
       <div>
 				<ul>
-					<li></li>
-					<li></li>
+					<li>React</li>
+					<li>React advantage</li>
 				</ul>
 			</div>
     </main>
