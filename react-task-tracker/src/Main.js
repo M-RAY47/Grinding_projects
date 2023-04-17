@@ -4,7 +4,7 @@ const Main = () => {
       <div>
 				<ul>
 					<li>React</li>
-					<li></li>
+					<li>React advantage</li>
 				</ul>
 			</div>
     </main>
