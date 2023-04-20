@@ -6,6 +6,7 @@ const Main = () => {
 					<li>React</li>
 					<li>React advantage</li>
 					<li>React advantage</li>
+					<li>React advantage</li>
 				</ul>
 			</div>
     </main>
