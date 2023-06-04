@@ -1,8 +1,10 @@
 const footer = () => {
+  const copyRightDate = new Date().getFullYear()
+  console.log(copyRightDate)
   return (
     <div className="footer">
       <footer>
-        <small>&copy; 2023. All right reserved</small>
+        <small>&copy; {copyRightDate}. All right reserved</small>
       </footer>
     </div>
   );
