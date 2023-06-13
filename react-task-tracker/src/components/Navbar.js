@@ -2,7 +2,10 @@ const Navbar = () => {
   return (
 		<nav>
 			<img />
-			<div></div>
+			<div>Learn</div>
+			<div>Learn React</div>
+			<div>Learn</div>
+			<div>Learn</div>
 		</nav>
 	)
 };
