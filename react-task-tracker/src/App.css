@@ -6,6 +6,17 @@
 }
 nav {
   display: flex;
-  font-size: 30px;
+  font-size: 20px;
   line-height: 33px;
+  gap: 20px;
+}
+nav >div:hover {
+  color: aqua;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 35px;
+  line-height: 33px;
+  font-weight: 700;
 }

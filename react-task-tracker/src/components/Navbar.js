@@ -1,6 +1,6 @@
 const Navbar = () => {
   return (
-		<nav>
+		<nav className="{style}">
 			<img />
 			<div>Learn</div>
 			<div>Learn React</div>
@@ -9,5 +9,8 @@ const Navbar = () => {
 		</nav>
 	)
 };
+const style =  {
+	gap: '20px'
+}
 export default Navbar;
 
