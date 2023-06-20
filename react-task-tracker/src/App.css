@@ -1,35 +1,61 @@
 .App {
-  /* text-align: center; */
   min-height: 600px;
   margin: 0 auto;
   background: ffff;
+  width: 100%;
 }
+
 nav {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   font-size: 20px;
   line-height: 33px;
-  gap: 20px;
   font-weight: 500;
+  box-shadow: 0px 1px 12px black;
 }
-nav >ul {
+
+.nav-items {
   display: flex;
-  flex-direction: row;
+  list-style: none;
 }
-nav >li {
-  text-decoration: none;
+
+.nav-items >li {
+  padding: 10px;
 }
-nav >li:hover {
+
+.nav-items >li:hover {
   color: aqua;
   cursor: pointer;
 }
+
 nav > img {
   width: 60px;
   height: 60px;
 }
 
 .title {
-  font-size: 35px;
+  margin: 40px;
+  font-size: 36px;
   line-height: 33px;
   font-weight: 700;
+}
+.main-content {
+  font-size: 20px;
+  font-weight: 500;
+}
+.main-content >li  {
+  padding: 8px;
+}
+
+.footer {
+  background: gainsboro;
+  margin: 0 auto;
+  width: 100%;
+  font-size: 22px;
+  font-weight: 500;
+  padding: 10px 16px;
+  position: fixed;
+  bottom: 0;
+
 }

@@ -5,11 +5,10 @@ const Navbar = () => {
       <img className="" src={logo} />
 
       <div className="nav-right">
-        <ul>
-          <li>Learn</li>
-          <li>Learn React</li>
-          <li>Learn</li>
-          <li>Learn</li>
+        <ul className="nav-items">
+          <li>Pricing</li>
+          <li>About</li>
+          <li>Contact</li>
         </ul>
       </div>
     </nav>

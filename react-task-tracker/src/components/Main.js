@@ -2,15 +2,20 @@ const Main = () => {
   return (
     <main>
       <div>
-				<div className="title">Fun FEacts about programming</div>
-				<ul>
-					<li>React</li>
-					<li>React advantage</li>
-					<li>React advantage</li>
-					<li>React advantage</li>
-					<li>React advantage</li>
-				</ul>
-			</div>
+        <div className="title">Fun Facts about programming</div>
+        <ul className="main-content">
+          <li>Pain Can Keep the mind awake.</li>
+          <li>Very little is needed to make happy life</li>
+          <li>
+            The Impediment to action advances action. What stands in the way
+            becomes the way
+          </li>
+          <li>
+            Do something everyday that you don't to do, this is the golden rule
+            for aquiring the habit of doing your duty
+          </li>
+        </ul>
+      </div>
     </main>
   );
 };
