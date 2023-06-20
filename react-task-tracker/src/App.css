@@ -6,13 +6,26 @@
 }
 nav {
   display: flex;
+  justify-content: space-between;
   font-size: 20px;
   line-height: 33px;
   gap: 20px;
+  font-weight: 500;
 }
-nav >div:hover {
+nav >ul {
+  display: flex;
+  flex-direction: row;
+}
+nav >li {
+  text-decoration: none;
+}
+nav >li:hover {
   color: aqua;
   cursor: pointer;
+}
+nav > img {
+  width: 60px;
+  height: 60px;
 }
 
 .title {
