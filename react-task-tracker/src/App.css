@@ -1,8 +1,9 @@
 .App {
-  min-height: 600px;
+  height: 100vh;
   margin: 0 auto;
-  background: ffff;
+  background: #ffff;
   width: 100%;
+  background: url(./logo.svg) no-repeat 300px 300px;
 }
 
 nav {
@@ -44,6 +45,7 @@ nav > img {
   font-size: 20px;
   font-weight: 500;
 }
+
 .main-content >li  {
   padding: 8px;
 }

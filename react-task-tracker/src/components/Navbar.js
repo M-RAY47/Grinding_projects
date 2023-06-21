@@ -1,5 +1,8 @@
 import logo from "../logo.svg";
 const Navbar = () => {
+  const style = {
+    gap: "20px",
+  };
   return (
     <nav className="{style}">
       <img className="" src={logo} />
@@ -13,9 +16,6 @@ const Navbar = () => {
       </div>
     </nav>
   );
-};
-const style = {
-  gap: "20px",
 };
 export default Navbar;
 
