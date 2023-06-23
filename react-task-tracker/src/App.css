@@ -1,9 +1,8 @@
 .App {
   height: 100vh;
   margin: 0 auto;
-  background: #0ccf;
+  background: #282D35;
   width: 100%;
-  background: url(./logo.svg) no-repeat 300px 300px;
 }
 
 nav {
@@ -40,10 +39,12 @@ nav > img {
   font-size: 36px;
   line-height: 33px;
   font-weight: 700;
+  color: #fff;
 }
 .main-content {
   font-size: 20px;
   font-weight: 500;
+  background: url(./reactjs-icon-2.svg) no-repeat center right;
 }
 
 .main-content >li  {
