@@ -49,13 +49,18 @@ nav > img {
   font-size: 20px;
   font-weight: 500;
 }
+.main-content>li::marker {
+  color: #61DAFB;
+  font-size: 1.4em;
+
+}
 
 .main-content >li  {
   padding: 8px;
 }
 
 .footer {
-  background: gainsboro;
+  background: #21222A;
   margin: 0 auto;
   width: 100%;
   font-size: 22px;
