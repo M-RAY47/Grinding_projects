@@ -1,4 +1,5 @@
 const Main = () => {
+	const mainQuotes = []
   return (
     <main>
       <div>
