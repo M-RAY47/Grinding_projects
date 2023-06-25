@@ -1,21 +1,17 @@
 const Main = () => {
-  const title = "Fun Facts about programming"
+  const title = "Fun Facts about programming";
   const mainQuotes = [
     "Pain Can Keep the mind awake.",
     "Very little is needed to make happy life",
     "The Impediment to action advances action. What stands in the way becomes the way",
-    "Do something everyday that you don't to do, this is the golden rule for aquiring the habit of doing your duty",
+    "Do something everyday that you don't want to do, this is the golden rule for aquiring the habit of doing your duty",
   ];
+  const main = mainQuotes.map((list) => <li key={list}>{list}</li>);
   return (
     <main>
       <div>
         <div className="title">{title}</div>
-        <ul className="main-content">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+        <ul className="main-content">{main}</ul>
       </div>
     </main>
   );
