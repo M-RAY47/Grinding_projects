@@ -5,7 +5,7 @@ const Navbar = () => {
   ));
   return (
     <nav>
-      <img className="" src={logo} />
+      <img src={logo} />
       <div className="nav-right">
         <ul className="nav-items">{navList}</ul>
       </div>
@@ -13,4 +13,3 @@ const Navbar = () => {
   );
 };
 export default Navbar;
-
