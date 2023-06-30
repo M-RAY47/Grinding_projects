@@ -18,7 +18,7 @@ export default function App() {
       <h1>{listHeader}</h1>
       <div className="todo-list">
         <ul>
-          {todoList.map((todo) => <li>{todo}</li>)}
+          {todoList.map((todo) => <li key={todo.id}>{todo}</li>)}
         </ul>
       </div>
     </>
