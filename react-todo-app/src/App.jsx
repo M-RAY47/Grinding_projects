@@ -6,7 +6,6 @@ export default function App() {
   const [todoList, setTodoList] = useState(['Sleep', 'Restart'])
   // setNewItem()
   // setTodoList()
-  // setTodoList()
   const inputLabel = 'New Item'
   const listHeader = "Todo List"
   return (
