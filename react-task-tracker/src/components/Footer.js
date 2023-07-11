@@ -1,6 +1,5 @@
 const footer = () => {
   const copyRightDate = new Date().getFullYear()
-  console.log(copyRightDate)
   return (
     <div className="footer">
       <footer>
