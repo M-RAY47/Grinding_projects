@@ -7,7 +7,7 @@ const Main = () => {
     "Do something everyday that you don't want to do, this is the golden rule for aquiring the habit of doing your duty",
     "Don't judge your gretness by your shadow at the sunset",
     "Never discouraged any one who continually makes progress no matter how slow it is, even if it is yourself",
-    'The calmer you are the clear you think'
+    "The calmer you are the clear you think",
   ];
   const main = mainQuotes.map((list) => <li key={list}>{list}</li>);
   return (
