@@ -1,56 +1,53 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import TweetLogo from './TweetLogo.jsx'
-const Main = (props) => {
+import { useEffect, useRef, useState } from "react";
+import TweetLogo from "./TweetLogo.jsx";
+import { getData } from "./getData.jsx";
 
+const url1 =
+  "https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json";
+
+const Main = ({ uniqueColor, changeColor }: props) => {
   // get random quote from quoutes
   const getRandomQuote = (quotes) => {
-    return quotes[
-      Math.floor(Math.random() * quotes.length)
-    ];
+    return quotes[Math.floor(Math.random() * quotes.length)];
   };
+  const singleQuote = [
+    {
+      quote:
+        "Whatever the mind of man can conceive and believe, it can achieve.",
+      author: "Napoleon Hill",
+    },
+  ];
 
-  const styleMain = {};
+  const quotesData = useRef([]);
+  const [currQuote, setCurrQuote] = useState(getRandomQuote(singleQuote));
 
   const btnClass = {
-    background: props.props.uniqueColor,
+    background: uniqueColor,
     color: "#fff",
   };
 
   useEffect(() => {
-    // const url = "https://my-json-server.typicode.com/M-RAY47/Quote-data/quotes";
-    const url1 =
-      "https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json";
-
-    // const getData = async() => {
-    // 	const res = await (await fetch(url1)).json()
-    // 	console.log('The res>>>><>>>>>', res)
-    // }
-    // getData()
-    axios.get(url1).then((res) => {
-      // console.log("res.data", res.data, typeof res.data, props, props.props);
-
-      const quotes = res.data.quotes;
-			console.log("quotes", quotes)
-      setQuotesData(quotes);
-			setCurrQuote(getRandomQuote(quotesData))
-			console.log(currQuote, quotesData)
-    });
+    getData(url1)
+      .then((res) => {
+        quotesData.current = res.quotes;
+        setCurrQuote(getRandomQuote(quotesData.current));
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }, []);
 
-  const [quotesData, setQuotesData] = useState([]);
-  const [currQuote, setCurrQuote] = useState(getRandomQuote(quotesData));
+  const changeQuote = () => {
+    setCurrQuote(getRandomQuote(quotesData.current));
+    changeColor();
+  };
 
-	// console.log('curr', currQuote, quotesData, btnClass)
-	const changeQuote = () => {
-		setCurrQuote(getRandomQuote(quotesData))
-	}
+  const tweetQuote = `https://twitter.com/intent/post?text="${currQuote.quote}"${currQuote.author}"`;
 
-  const tweetQuote = '';
   const newQuoteBtn = "New Quote";
   return (
     <main id="quote-box">
-      {/* <div id="text">{currQuote.quote}</div> */}
+      <div id="text">{currQuote.quote}</div>
       <div className="quote__info">
         <div className="right-info">
           <button
@@ -69,17 +66,15 @@ const Main = (props) => {
             target="_blank"
             rel="noreferrer"
           >
-            <TweetLogo props={props.props.uniqueColor} />
-            
+            <TweetLogo color={uniqueColor} />
           </a>
         </div>
 
-        {/* <div id="author">{currQuote.author}</div> */}
+        <div id="author">{currQuote.author}</div>
       </div>
     </main>
   );
 };
+
 export default Main;
-
-
 

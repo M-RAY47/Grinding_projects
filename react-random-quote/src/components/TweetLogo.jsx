@@ -1,5 +1,4 @@
-const TweetLogo = (color) => {
-  console.log(color)
+const TweetLogo = ({color}) => {
   return (
     <>
       <svg
