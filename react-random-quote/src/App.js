@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from "react";
 import Main from "./components/Main.jsx";
 
 function App() {
@@ -20,24 +21,22 @@ function App() {
 
   const getRandomColor = () =>
     colors[Math.floor(Math.random() * colors.length)];
-  // console.log();
-  const uniqueColor = getRandomColor();
-  const propsMain = {
-    uniqueColor
-  };
+
+  const [uniqueColor, setUniqueColor] = useState(getRandomColor());
+
+  const changeTheme = () => setUniqueColor(getRandomColor());
   const appHeaderStyle = {
     backgroundColor: uniqueColor,
-    // color: uniqueColor,
+    color: uniqueColor,
   };
   return (
     <div className="App">
       <header className="App-header" style={appHeaderStyle}>
-        <Main props={propsMain} />
+        <Main uniqueColor={uniqueColor} changeColor={changeTheme} />
       </header>
     </div>
   );
 }
 
 export default App;
-
 
