@@ -52,9 +52,11 @@ nav > img {
 .main-content>li::marker {
   color: #61DAFB;
   font-size: 1.4em;
-
 }
 
+.display-title {
+  
+}
 .main-content >li  {
   padding: 8px;
 }
