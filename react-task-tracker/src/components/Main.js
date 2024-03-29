@@ -1,3 +1,5 @@
+import DisplayMessages from "./displayMessages";
+
 const Main = () => {
   const title = "Fun Facts about programming";
   const mainQuotes = [
@@ -16,6 +18,7 @@ const Main = () => {
         <div className="title">{title}</div>
         <ul className="main-content">{main}</ul>
       </div>
+      <DisplayMessages />
     </main>
   );
 };
