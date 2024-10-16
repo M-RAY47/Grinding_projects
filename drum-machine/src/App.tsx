@@ -1,33 +1,79 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import { AudioClip } from './types'
+import Drum from './Drum.tsx'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+const audioCLips: AudioClip[] = [
+  {
+    keyTrigger: 'Q',
+    url: 'https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-1.mp3',
+    description: 'Heater 1'
+  },
+  {
+    keyTrigger: 'W',
+    url: 'https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-2.mp3',
+    description: 'Heater 2'
+  },
+  {
+    keyTrigger: 'E',
+    url: 'https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-3.mp3',
+    description: 'Heater 3'
+  },
+  {
+    keyTrigger: 'A',
+    url: 'https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-4_1.mp3',
+    description: 'Heater 4'
+  },
+  {
+    keyTrigger: 'S',
+    url: 'https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-6.mp3',
+    description: 'Clap'
+  },
+  {
+    keyTrigger: 'D',
+    url: 'https://cdn.freecodecamp.org/testable-projects-fcc/audio/Dsc_Oh.mp3',
+    description: 'Open HH'
+  },
+  {
+    keyTrigger: 'Z',
+    url: 'https://cdn.freecodecamp.org/testable-projects-fcc/audio/Kick_n_Hat.mp3',
+    description: "Kick n' Hat"
+  },
+  {
+    keyTrigger: 'X',
+    url: 'https://cdn.freecodecamp.org/testable-projects-fcc/audio/RP4_KICK_1.mp3',
+    description: "Kick"
+  },
+  {
+    keyTrigger: 'C',
+    url: 'https://cdn.freecodecamp.org/testable-projects-fcc/audio/Cev_H2.mp3',
+    description: 'Close HH'
+  },
 
+]
+function App() {
+  const playAudio = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    console.log('Play Audio', e)
+    const clip = audioCLips.find(audio => audio.keyTrigger === e.key.toUpperCase())
+    console.log('the clip is here',clip)
+    if(!clip) return
+    (document.getElementById(clip.keyTrigger) as HTMLAudioElement)
+		.play()
+		.catch(console.error);
+    document.getElementById(`drum-${clip.keyTrigger}`)?.focus()
+    document.getElementById('display')!.innerHTML = clip.description || '';
+  }
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='container' id="drum-machine" onKeyDown={playAudio}>
+      <h1>FCC Drum Machine</h1>
+      <div className='pad-bank'>
+        { audioCLips.map((clip) => (
+          <Drum audioClip={clip} key={clip.keyTrigger} />
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div id="display" className="desc"></div>
+    </div>
     </>
   )
 }
